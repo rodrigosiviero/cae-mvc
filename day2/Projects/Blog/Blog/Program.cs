@@ -18,41 +18,46 @@ namespace Blog
 
             using (ISession session = NHibernateHelper.AbreSession())
             {
+                //Instancia DAO
+                PostDAO dao = new PostDAO();
+                //Adiciona
                 Post post = new Post();
                 post.Titulo = "Post do NHibernate";
                 post.Conteudo = "Conteudo";
                 post.DataPublicacao = DateTime.Now;
                 post.Publicado = true;
+            
+                //Adiciona chamada DAO
+                dao.Adiciona(post);
+                Console.Clear();
+                //Adiciona
 
-                ITransaction tx = session.BeginTransaction();
-                session.Save(post);
-                tx.Commit();
+                Console.ReadLine();
 
+                //Atualiza
                 Post postAtualizado = new Post();
-                postAtualizado.Id = 6;
+                postAtualizado.Id = 5;
                 postAtualizado.Titulo = "Post Atualizado";
                 postAtualizado.Conteudo = "Conteudo Atualizado";
                 postAtualizado.DataPublicacao = DateTime.Now;
                 postAtualizado.Publicado = true;
+                //Atualiza chamada DAO
+                dao.Atualiza(postAtualizado);        
+                //Atualiza
 
-                ITransaction txAtualiza = session.BeginTransaction();
-                session.Merge(postAtualizado);
-                txAtualiza.Commit();
-
-                Console.WriteLine("Busca por ID");
-                Post busca = session.Get<Post>(1);
-                Console.Write(busca.Titulo);
-
-                Console.WriteLine("Selecionar todos Posts");
-                string hql = "select p from Post p";
-                IQuery query = session.CreateQuery(hql);
-                IList<Post> posts = query.List<Post>();
-
-                foreach (var postAtual in posts)
+                //Lista Posts
+                Console.WriteLine("Listar todos Posts");
+                //Lista Chamada DAO
+                IList<Post> postsAtual = dao.Lista();
+                foreach (var postAtual in postsAtual)
                 {
                     Console.WriteLine("ID: " + postAtual.Id + " Titulo: " + postAtual.Titulo);
                 }
+                //Lista Posts
 
+                //Delete chamada DAO
+                dao.Delete(post);
+                //Delete 
                 Console.ReadLine();
             }
         }
