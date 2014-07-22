@@ -25,7 +25,7 @@ namespace Blog
             IList<Post> posts = dao.Lista();
             foreach (var postAtual in posts)
             {
-                Console.WriteLine("Post Titulo " + postAtual.Titulo);
+                Console.WriteLine("Id: " + postAtual.Id + " Post Titulo " + postAtual.Titulo);
             }
 
 
@@ -33,7 +33,28 @@ namespace Blog
             {
                 Console.WriteLine("Conexao aberta");
             }
+            int idBusca = Convert.ToInt32(Console.ReadLine());
+            IList<Post> resultado = dao.BuscarPorId(idBusca);
+            foreach (var postAtual in resultado)
+            {
+                Console.WriteLine("Busca");
+                Console.WriteLine("Id: " + postAtual.Id + " Post Titulo " + postAtual.Titulo);
+                Console.WriteLine("Busca");
+            }
 
+            Post Atulizado = new Post();
+            Atulizado.Id = 10;
+            Atulizado.Titulo = "Atualizado";
+            Atulizado.Conteudo = "Atualizado";
+            Atulizado.DataPublicacao = DateTime.Now;
+            Atulizado.Publicado = true;
+            dao.Atualiza(Atulizado);
+
+            Console.WriteLine("Atualizado");
+            Console.WriteLine("Id: " + Atulizado.Id + " Post Titulo " + Atulizado.Titulo + "Conteudo " + Atulizado.Conteudo);
+            Console.WriteLine("Atualizado");
+
+            Console.ReadLine();
         }
     }
 }
