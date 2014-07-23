@@ -1,0 +1,36 @@
+﻿@model BlogWeb.Models.Post
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+<form action="/Post/Adiciona" method="post">
+    <label>Titulo:
+    <input name="Titulo" value="@ViewBag.Post.Titulo"/> 
+    </label>
+    <label>
+        Conteudo:
+        <input name="Conteudo" value="@ViewBag.Post.Conteudo" />
+    </label>
+    <label>
+        Data De Publicação:
+        <input name="DataPublicacao" value="@ViewBag.Post.DataPublicacao" />
+    </label>
+    <label>
+        Publicar?
+        <input type="checkbox" name="Publicado" value="true" />
+    </label>
+    <input type="submit" value="Cadastrar"/>
+    <br />
+    @Html.ValidationSummary()
+</form>
+</body>
+</html>

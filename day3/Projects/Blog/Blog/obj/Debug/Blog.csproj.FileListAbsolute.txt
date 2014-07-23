@@ -1,0 +1,14 @@
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Blog.exe.config
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Blog.mdf
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Blog_log.ldf
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Blog.exe
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Blog.pdb
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.exe
+c:\users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.pdb
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\FluentNHibernate.dll
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Iesi.Collections.dll
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\NHibernate.dll
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\FluentNHibernate.xml
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\Iesi.Collections.xml
+C:\Users\aspnet4514\documents\visual studio 2013\Projects\Blog\Blog\bin\Debug\NHibernate.xml
