@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+<form action="/Post/Adiciona">
+    <label>Titulo:
+    <input name="Titulo"/> 
+    </label>
+    <label>
+        Conteudo:
+        <input name="Conteudo" />
+    </label>
+    <label>
+        Data De Publicação:
+        <input name="DataPublicacao" />
+    </label>
+    <label>
+        Publicar?
+        <input type="checkbox" name="Publicado" value="checked" value="true"/>
+    </label>
+    <input type="submit" value="Cadastrar"/>
+</form>
+</body>
+</html>
