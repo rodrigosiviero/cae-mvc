@@ -36,14 +36,34 @@ namespace BlogWeb.Controllers
             {
                 //Chamada DAO
                 PostDAO dao = new PostDAO();
-                dao.Adiciona(post);
                 return RedirectToAction("Index");
             }
             else
             {
-                ViewBag.Post = post;
-                return View("Form");
+                return View("Form", post);
             }
+        }
+
+        public ActionResult Remove(int id)
+        {
+            PostDAO dao = new PostDAO();
+            Post post = dao.BuscaPorId(id);
+            dao.Deleta(post);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Visualiza(int id)
+        {
+            PostDAO dao = new PostDAO();
+            Post post = dao.BuscaPorId(id);
+            return View(post);
+        }
+
+        public ActionResult Altera(Post post)
+        {
+            PostDAO dao = new PostDAO();
+            dao.Atualiza(post);
+            return RedirectToAction("Index");
         }
 	}
 }

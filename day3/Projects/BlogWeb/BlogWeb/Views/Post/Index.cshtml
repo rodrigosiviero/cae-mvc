@@ -18,6 +18,7 @@
                 <th>Titulo</th>
                 <th>Data de Publicacao</th>
                 <th>Publicado</th>
+                <th>Açoes</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,8 @@
                     <td>@p.Titulo</td>
                     <td>@p.DataPublicacao</td>
                     <td>@p.Publicado</td>
+                    <td>@Html.ActionLink("Exclui","Remove", new { id = p.Id })</td>
+                    <td>@Html.ActionLink("Altera", "Visualiza", new { id = p.Id })</td>
                 </tr>
             }
         </tbody>

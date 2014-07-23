@@ -48,6 +48,16 @@ namespace BlogWeb
                 tx.Commit();
             }
         }
+
+        public void Deleta(Post post)
+        {
+            using (ISession session = NHibernateHelper.AbreSession())
+            {
+                ITransaction tx = session.BeginTransaction();
+                session.Delete(post);
+                tx.Commit();
+            }
+        }
         
     }
 }
