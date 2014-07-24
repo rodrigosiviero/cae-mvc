@@ -36,6 +36,7 @@ namespace BlogWeb.Controllers
             {
                 //Chamada DAO
                 PostDAO dao = new PostDAO();
+                dao.Adiciona(post);
                 return RedirectToAction("Index");
             }
             else
@@ -61,9 +62,20 @@ namespace BlogWeb.Controllers
 
         public ActionResult Altera(Post post)
         {
-            PostDAO dao = new PostDAO();
-            dao.Atualiza(post);
-            return RedirectToAction("Index");
+            if (post.Publicado && !post.DataPublicacao.HasValue)
+            {
+                ModelState.AddModelError("post.Invalido", "Posts publicados precisam de Data");
+            }
+            if (ModelState.IsValid) 
+            { 
+                PostDAO dao = new PostDAO();
+                dao.Atualiza(post);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+               return RedirectToAction("Form", post);
+            }
         }
 	}
 }
