@@ -1,0 +1,21 @@
+
+<!-- Essa parte tem que ficar dentro da tag system.web -->
+<membership defaultProvider="blogProvider">
+  <providers>
+    <add name="blogProvider"
+          type="WebMatrix.WebData.SimpleMembershipProvider, WebMatrix.WebData"/>
+  </providers>
+</membership>
+
+
+
+
+
+<appSettings>
+  <add key="webpages:Version" value="3.0.0.0" />
+  <add key="webpages:Enabled" value="false" />
+    <add key="ClientValidationEnabled" value="true" />
+  <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  <add key="loginUrl" value="~/Login"/>
+</appSettings>
+
