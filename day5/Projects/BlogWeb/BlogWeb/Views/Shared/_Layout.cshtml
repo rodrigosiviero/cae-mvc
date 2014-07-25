@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog do Rodrigo</title>
+    <link href="~/Content/Css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Css/blog.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("_MenuSuperior")
+    <div class="container">
+    @Html.Partial("_Cabecalho")
+
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                @RenderBody()
+            </div>
+            @Html.Action("Index","Menu")
+        </div>
+    </div>
+    @RenderSection("Scripts", false)
+</body>
+</html>

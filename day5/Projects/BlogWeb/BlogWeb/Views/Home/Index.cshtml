@@ -1,0 +1,23 @@
+﻿@model IList<BlogWeb.Models.Post>
+
+@Html.Partial("_ListaPosts", Model)
+
+@*@foreach (var p in Model)
+{
+    <div class="blog-post">
+        <div class="blog-post-title">@p.Titulo</div>
+        @if (p.Autor != null)
+        {
+            <div class="blog-post-meta">
+                @p.Autor.Nome - @p.DataPublicacao
+            </div>
+        }
+        else
+        {
+            <div class="blog-post-meta">
+                Sem Autor - @p.DataPublicacao
+            </div>
+        }
+        @p.Conteudo
+    </div>
+}*@
